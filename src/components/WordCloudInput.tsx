@@ -35,14 +35,17 @@ const WordCloudInput: React.FC<WordCloudInputProps> = ({
         onChange={(e) => setText(e.target.value)}
       ></textarea>
 
-      <div className="flex-row space-y-4 lg:space-y-0  lg:flex mt-4 items-center justify-center gap-[2rem]">
+      <div className="flex-col lg:flex-row gap-2 lg:space-y-0 flex mt-4 items-center justify-center lg:gap-[2rem]">
         <Button
           className="hover:bg-[#2C3333] bg-[#0E8388] text-white "
           onClick={generateWordCloud}
         >
           Generate Word Cloud
         </Button>
-        <Button className="bg-[#ff6347] text-white" onClick={resetWordCloud}>
+        <Button
+          className="bg-[#ff6347] hover:bg-[#ff63473d] text-white"
+          onClick={resetWordCloud}
+        >
           Reset Word Cloud
         </Button>
       </div>

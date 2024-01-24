@@ -67,9 +67,9 @@ const WordCloudOutput: React.FC<WordCloudRendererProps> = ({
         // Limit the number of attempts to prevent potential infinite loops
         while (collisionDetected && attempts < 1000) {
           position = {
-            x: Math.random() * 100,
-            y: Math.random() * 350,
-            radius: fontSize / 100000,
+            x: Math.random() * 90,
+            y: Math.random() * 300,
+            radius: fontSize / 2,
           };
 
           collisionDetected = checkCollision(position, existingPositions);
@@ -84,16 +84,21 @@ const WordCloudOutput: React.FC<WordCloudRendererProps> = ({
         count,
         style: {
           fontSize: isCenterWord ? '50px' : `${fontSize}px`,
-          color: isCenterWord ? 'red' : `${color}`,
+          color: isCenterWord ? '#ffd700' : `${color}`,
           fontWeight: isCenterWord ? '900' : '400',
           order: isCenterWord ? 0 : 1,
           textTransform: isCenterWord ? 'uppercase' : 'lowercase',
           zIndex: isCenterWord ? '1000' : '1',
-          opacity: isCenterWord ? '1' : '0.5',
-          position: isCenterWord ? 'static' : 'absolute',
-          top: isCenterWord ? '50%' : position.y ? `${position.y}%` : undefined,
+          opacity: isCenterWord ? '1' : '0.7',
+          position: isCenterWord ? 'relative' : 'absolute',
+
+          top: isCenterWord
+            ? '60px'
+            : position.y
+            ? `${position.y}%`
+            : undefined,
           left: isCenterWord
-            ? '50%'
+            ? '30%'
             : position.x
             ? `${position.x}%`
             : undefined,

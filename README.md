@@ -13,8 +13,8 @@ This app generates a visual word cloud from input text, displaying keywords base
 - [Installation](#installation)
 - [Usage](#usage)
 - [Demo](#demo)
-- [Technologies](#technologies)
-- [Process](#process)
+  <!-- - [Technologies](#technologies) -->
+  <!-- - [Process](#process) -->
 - [Improvement](#improvement)
 - [Contributing](#contributing)
 - [License](#license)
@@ -43,7 +43,7 @@ The Word Cloud Generator is a React component that takes user-inputted text and 
 2. Change into the project directory:
 
    ```bash
-   cd word-cloud-generator
+   cd word-cloud-generator-v1
    ```
 
 3. Install dependencies:
@@ -97,6 +97,7 @@ Some possible enhancements for the future:
 - Improved responsive layout and sizing.
 - Highlight or categorize words by part of speech.
 - Add more customization like themes, implement dark and light themes.
+- Refactor Code.
 
 ## Contributing
 
