@@ -20,6 +20,11 @@
 4. #DFF6FF
 */
 
+body {
+  background: linear-gradient(315deg, #0f8488, #2e4f4f);
+  height: 100vh;
+}
+
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

@@ -4,6 +4,8 @@ This app generates a visual word cloud from input text, displaying keywords base
 
 <!-- Add Image here -->
 
+![word-cloud-img](./src/assets/world-cloud.png)
+
 ## Table of Contents
 
 - [Description](#description)
@@ -83,7 +85,7 @@ Font size of each word represents its frequency - most used words are largest.
 
 ## Demo
 
-You can preview the live project [here](here)
+You can preview the live project [here](https://word-cloud-generator-v1.vercel.app/)
 
 <!--TODO:  Add a link to video or add a video file or gif to show how it works -->
 
