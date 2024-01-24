@@ -47,8 +47,8 @@ const WordCloudOutput: React.FC<WordCloudRendererProps> = ({
       const angle = centerWord?.word ? randomAngleGenerator(0, 90) : 0;
 
       let position: { x: number; y: number; radius: number } = {
-        x: 0,
-        y: 0,
+        x: 50,
+        y: 50,
         radius: fontSize / 2, // Radius based on half of the font size
       };
 
@@ -65,11 +65,11 @@ const WordCloudOutput: React.FC<WordCloudRendererProps> = ({
         }));
 
         // Limit the number of attempts to prevent potential infinite loops
-        while (collisionDetected && attempts < 100) {
+        while (collisionDetected && attempts < 1000) {
           position = {
             x: Math.random() * 100,
             y: Math.random() * 350,
-            radius: fontSize / 10,
+            radius: fontSize / 100000,
           };
 
           collisionDetected = checkCollision(position, existingPositions);
@@ -84,16 +84,22 @@ const WordCloudOutput: React.FC<WordCloudRendererProps> = ({
         count,
         style: {
           fontSize: isCenterWord ? '50px' : `${fontSize}px`,
-          color,
+          color: isCenterWord ? 'red' : `${color}`,
           fontWeight: isCenterWord ? '900' : '400',
           order: isCenterWord ? 0 : 1,
           textTransform: isCenterWord ? 'uppercase' : 'lowercase',
           zIndex: isCenterWord ? '1000' : '1',
           opacity: isCenterWord ? '1' : '0.5',
           position: isCenterWord ? 'static' : 'absolute',
-          top: position.y ? `${position.y}%` : undefined,
-          left: position.x ? `${position.x}%` : undefined,
-          transform: `rotate(${angle}deg)`,
+          top: isCenterWord ? '50%' : position.y ? `${position.y}%` : undefined,
+          left: isCenterWord
+            ? '50%'
+            : position.x
+            ? `${position.x}%`
+            : undefined,
+          transform: isCenterWord
+            ? 'translate(-50%, -50%)'
+            : `rotate(${angle}deg)`,
         },
       };
 
@@ -102,7 +108,7 @@ const WordCloudOutput: React.FC<WordCloudRendererProps> = ({
   }
 
   return (
-    <div className="flex-1 h-full flex-wrap sm:w-1/2 w-full  relative">
+    <div className="flex-1 mt-[3rem] lg:mt-0 h-full flex-wrap sm:w-1/2 w-full  relative">
       {words.map(({ word, count, style }) => (
         <span key={word} title={`Frequency: ${count}`} style={style}>
           {word}

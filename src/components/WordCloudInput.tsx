@@ -27,15 +27,15 @@ const WordCloudInput: React.FC<WordCloudInputProps> = ({
 
   return (
     <div className="flex-1 sm:w-1/2 w-full ">
-      <p>Enter your text here:</p>
+      <p className="text-md lg:text-base">Enter your text here:</p>
       <textarea
         placeholder="Enter text here..."
-        className="w-full mt-2 rounded-xl focus:outline-none font-lato-sans px-4 py-5 border border-[#5e72e4]"
+        className="w-full mt-2 rounded-xl focus:border-2 focus:outline-none font-lato-sans px-4 py-5 border border-[#5e72e4] h-[300px]"
         value={text}
         onChange={(e) => setText(e.target.value)}
       ></textarea>
 
-      <div className="flex mt-4 items-center justify-center gap-[2rem]">
+      <div className="flex-row space-y-4  lg:flex mt-4 items-center justify-center gap-[2rem]">
         <Button
           className="bg-[#5e72e4] text-white "
           onClick={generateWordCloud}

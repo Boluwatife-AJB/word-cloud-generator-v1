@@ -11,17 +11,19 @@ const WordCloudGenerator = () => {
     // Update the output word frequency in the parent component
     setOutputWordFrequency(frequency);
   };
+
   return (
-    <div className="font-lato-sans mt-4 w-full lg:px-10 ">
-      <h1 className="text-center text-4xl font-bold">World Cloud Generator</h1>
-      <h4 className="text-center text-2xl">
+    <div className="font-lato-sans mt-4 w-full px-4 lg:px-10 overflow-x-hidden">
+      <h1 className="text-center text-2xl lg:text-4xl font-bold">
+        Word Cloud Generator
+      </h1>
+      <h4 className="text-center text-base lg:text-lg">
         Transform your piece of text into an awesome word cloud
       </h4>
-      <div className=" mt-5 lg:px-12 px-4 flex-col md:flex-row flex gap-5  items-center justify-between">
+      <div className="mt-5 md:flex md:flex-row flex-col gap-5 justify-between">
         {/* WORD CLOUD INPUT */}
         <WordCloudInput onWordFrequencyChange={handleWordFrequencyChange} />
-        {/* Divider */}
-        {/* <hr className="w-[300px] rotate-90 h-full bg-red-900" /> */}
+
         {/* WORD CLOUD OUTPUT */}
         <WordCloudOutput wordFrequency={outputWordFrequency} />
       </div>

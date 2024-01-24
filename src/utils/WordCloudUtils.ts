@@ -1,59 +1,61 @@
 // WORD CLOUD INPUT
 export const processText = (inputText: string): string[] => {
-    const stopWords = [
-      'the',
-      'and',
-      'is',
-      'in',
-      'it',
-      'to',
-      'of',
-      'for',
-      'with',
-      'that',
-      'this',
-      'a',
-      's',
-      'd',
-      'an',
-      'if',
-      'can',
-      'by',
-      'you',
-      'your',
-      'as',
-      'get',
-      'new',
-      'not',
-      'at',
-      'on',
-      'its',
-      'are',
-      't',
-      'or',
-      'be',
-      'do',
-      'don',
-      'but',
-    ];
-    const words = (inputText.toLowerCase().match(/\b\w+\b/g) || []).filter(
-      (word) =>
-        !stopWords.includes(word) &&
-        /^[a-zA-Z]+$/.test(word) && // Check if the word contains only letters
-        !word.includes("'") &&
-        !word.includes('.')
-    );
-    return words;
-  };
+  const stopWords = [
+    'the',
+    'and',
+    'is',
+    'in',
+    'it',
+    'to',
+    'of',
+    'for',
+    'with',
+    'that',
+    'this',
+    'a',
+    's',
+    'd',
+    'an',
+    'if',
+    'can',
+    'by',
+    'you',
+    'your',
+    'as',
+    'get',
+    'new',
+    'not',
+    'at',
+    'on',
+    'its',
+    'are',
+    't',
+    'or',
+    'be',
+    'do',
+    'don',
+    'but',
+    'I',
+  ];
+  const words = (inputText.toLowerCase().match(/\b\w+\b/g) || []).filter(
+    (word) =>
+      !stopWords.includes(word) &&
+      /^[a-zA-Z]+$/.test(word) && // Check if the word contains only letters
+      !word.includes("'") &&
+      !word.includes('.')
+  );
+  return words;
+};
 
-  export const countWordFrequency = (words: string[]): { [key: string]: number } => {
-    const frequency: { [key: string]: number } = {};
-    words.forEach((word) => {
-      frequency[word] = (frequency[word] || 0) + 1;
-    });
-    return frequency;
-  };
-
+export const countWordFrequency = (
+  words: string[]
+): { [key: string]: number } => {
+  const frequency: { [key: string]: number } = {};
+  words.forEach((word) => {
+    frequency[word] = (frequency[word] || 0) + 1;
+  });
+  return frequency;
+};
 
 // WORD CLOUD OUTPUT
 export const calculateFontSize = (count: number): number => {
