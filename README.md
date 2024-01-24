@@ -4,7 +4,7 @@ This app generates a visual word cloud from input text, displaying keywords base
 
 <!-- Add Image here -->
 
-![word-cloud-img](./src/assets/world-cloud.png)
+![word-cloud-img](./src/assets/word-cloud.png)
 
 ## Table of Contents
 
