@@ -4,7 +4,7 @@ This app generates a visual word cloud from input text, displaying keywords base
 
 <!-- Add Image here -->
 
-![word-cloud-img](./src/assets/word-cloud.png)
+![word-cloud-img](./src/assets/word-cloud.png 'Word Cloud Preview')
 
 ## Table of Contents
 
@@ -37,7 +37,7 @@ The Word Cloud Generator is a React component that takes user-inputted text and 
 1. Clone the repository
 
    ```bash
-   git clone https://github.com/Boluwatife-AJB/word-cloud-generator.git
+   git clone https://github.com/Boluwatife-AJB/word-cloud-generator-v1.git
    ```
 
 2. Change into the project directory:
@@ -58,7 +58,7 @@ The Word Cloud Generator is a React component that takes user-inputted text and 
    npm run dev
    ```
 
-   This will start the development server, and you can view the Word Cloud Generator in your browser at `http://localhost:5173`.
+   This will start the development server, and you can view the Word Cloud Generator in your browser at `http://localhost:5173`. However if you have a local server running on `http://localhost:5173` try running it on `http://localhost:5174`
 
 ## Usage
 

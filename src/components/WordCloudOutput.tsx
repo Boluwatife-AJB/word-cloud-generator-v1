@@ -113,7 +113,7 @@ const WordCloudOutput: React.FC<WordCloudRendererProps> = ({
   }
 
   return (
-    <div className="flex-1 mt-[3rem] lg:mt-0 h-full flex-wrap sm:w-1/2 w-full  relative">
+    <div className="flex-1 mt-[3rem] lg:mt-0 h-[50px] md:h-full  flex-wrap sm:w-1/2 w-full  relative">
       {words.map(({ word, count, style }) => (
         <span key={word} title={`Frequency: ${count}`} style={style}>
           {word}
